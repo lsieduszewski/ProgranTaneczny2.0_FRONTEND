@@ -1,0 +1,32 @@
+<div>
+    <label>Dodaj sędziego</label></br>
+
+    <input type="text" id="judge" list="judges" placeholder="Podaj sędziego" ng-model="model.newTournamentJudge.id" style="width: 500px;" >
+
+    <datalist id="judges">
+        <option ng-repeat="judge in model.judges" >
+            Imię i nazwisko: {{judge.surname}} {{judge.name}},{{judge.city}},{{judge.country}}, Id:{{judge.id}}</option>
+    </datalist>
+    </br>
+    <label>Podaj Litere sędziego: </label>
+    <input type="text" ng-model="model.newTournamentJudge.tournamentId" /></br>
+
+    <!---->
+    <!--<label>Podaj Klub (jeszcze nie działa): </label></br>-->
+    <!--<input type="text" ng-model="model.newCouple.club" placeholder="Klub" style="width: 500px;">-->
+
+
+    <!--<select class="form-control"  >-->
+
+        <!--<option ng-repeat="maleDancer in model.dancers | filter: { male: 'true' }" >-->
+            <!--{{maleDancer.id}}, {{maleDancer.surname}} {{maleDancer.name}}</option>-->
+    <!--</select>-->
+
+    <!--<select class="form-control" >-->
+        <!--<option ng-repeat="femaleDancer in model.dancers | filter: { male: 'false' }" >-->
+            <!--{{femaleDancer.id}}, {{femaleDancer.surname}} {{femaleDancer.name}}</option>-->
+    <!--</select>-->
+
+    <button class="btn btn-default" ng-click="model.addTournamentJudge()">Dodaj sędziego</button>
+</div>
+

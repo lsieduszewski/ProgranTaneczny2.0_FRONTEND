@@ -1,0 +1,34 @@
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Sex</th>
+            <th>Surname</th>
+            <th>Name</th>
+
+        </tr>
+        <tr ng-repeat="dancer in model.dancers">
+            <td>{{dancer.id}}</td>
+            <td>
+                <div ng-switch="dancer.male">
+                <div ng-switch-when="true">Male</div>
+                <div ng-switch-default>Female</div>
+                </div>
+            </td>
+            <td>{{dancer.surname}}</td>
+            <td>{{dancer.name}}</td>
+        </tr>
+    </table>
+
+
+    <div>
+        <ng-outlet></ng-outlet>
+    </div>
+
+    <accordion>
+        <accordion-panel heading="Panel 1">
+            This is the body for panel 1
+        </accordion-panel>
+    </accordion>
+
+</div>

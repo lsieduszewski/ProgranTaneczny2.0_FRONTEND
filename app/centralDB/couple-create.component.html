@@ -1,0 +1,43 @@
+<div>
+    <label>STWÓRZ PARĘ </label></br>
+
+    <input type="text" id="male" list="maleDancer" placeholder="Tancerz" ng-model="model.newCouple.male" style="width: 500px;" >
+
+    <datalist id="maleDancer">
+        <option ng-repeat="maleDancer in model.dancers | filter: { male: 'true' }" >
+            Imię i nazwisko: {{maleDancer.surname}} {{maleDancer.name}}, Id:{{maleDancer.id}}</option>
+    </datalist>
+    </br>
+    <input type="text" id="female" list="femaleDancer" placeholder="Tancerka" ng-model="model.newCouple.female" style="width: 500px;">
+
+    <datalist id="femaleDancer">
+        <option ng-repeat="femaleDancer in model.dancers | filter: { male: 'false' }" >
+            Imię i nazwisko: {{femaleDancer.surname}} {{femaleDancer.name}}, Id:{{femaleDancer.id}}</option>
+    </datalist>
+</br>
+    <input type="text" id="club" list="clubList" placeholder="Klub" ng-model="model.newCouple.club" style="width: 500px;">
+
+    <datalist id="clubList">
+        <option ng-repeat="club in model.clubs" >
+            Imię i nazwisko: {{club.name}} {{club.city}} {{club.country}}, Id:{{club.id}}</option>
+    </datalist></br>
+
+    <!---->
+    <!--<label>Podaj Klub (jeszcze nie działa): </label></br>-->
+    <!--<input type="text" ng-model="model.newCouple.club" placeholder="Klub" style="width: 500px;">-->
+
+
+    <!--<select class="form-control"  >-->
+
+        <!--<option ng-repeat="maleDancer in model.dancers | filter: { male: 'true' }" >-->
+            <!--{{maleDancer.id}}, {{maleDancer.surname}} {{maleDancer.name}}</option>-->
+    <!--</select>-->
+
+    <!--<select class="form-control" >-->
+        <!--<option ng-repeat="femaleDancer in model.dancers | filter: { male: 'false' }" >-->
+            <!--{{femaleDancer.id}}, {{femaleDancer.surname}} {{femaleDancer.name}}</option>-->
+    <!--</select>-->
+
+    <button class="btn btn-default" ng-click="model.addCouple()">Dodaj zawodnika</button>
+</div>
+

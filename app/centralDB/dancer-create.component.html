@@ -1,0 +1,22 @@
+<div>
+    <div>  PODAJ DANE ZAWODNIKA </div>
+
+    <label>Podaj płeć: </label>
+
+          <label class="radio-inline" >
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false" ng-checked="true" ng-model="model.newDancer.male" checked> Kobieta
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" ng-model="model.newDancer.male" > Mężczyzna
+    </label></br>
+
+
+
+
+    <label>Podaj nazwisko: </label>
+    <input type="text" ng-model="model.newDancer.surname" /></br>
+    <label>Podaj imię:</label>
+    <input type="text" ng-model="model.newDancer.name" /></br>
+    <button class="btn btn-default" ng-click="model.addDancer()">Dodaj zawodnika</button>
+</div>
+

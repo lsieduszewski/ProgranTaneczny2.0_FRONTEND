@@ -1,0 +1,47 @@
+
+    <div>
+        Aktualna runda:
+        <button class="btn btn-default" ng-click="model.addJudgeRate()">Podlicz aktualną rundę</button>
+        <b>
+            <div ng-if="model.tCouples.length == 0">Zakończono turniej</div>
+            <div ng-if="model.tCouples.length <= 7 && model.tCouples.length != 0">Final</div>
+            <div ng-if="model.tCouples.length <= 13 && model.tCouples.length > 7" > 1/2 Final</div>
+            <div ng-if="model.tCouples.length < 25 && model.tCouples.length > 13 ">1/4 Final</div>
+        </b>
+    </div>
+
+
+
+    <table class="table">
+        <tr>
+            <th>Tournament ID</th>
+            <th>Male Dancer</th>
+            <th>Female Dancer</th>
+            <th>Club</th>
+            <th>Place</th>
+            <th>Status</th>
+
+        </tr>
+        <tr ng-repeat="couple in model.couples | orderBy:'1*place'">
+            <td>{{couple.startNumber}}</td>
+            <td>{{couple.maleName}}</td>
+            <td>{{couple.femaleName}}</td>
+            <td>{{couple.club}}</td>
+            <td>{{couple.place}}</td>
+            <td>{{couple.inTournament}}</td>
+        </tr>
+    </table>
+
+
+    <div>
+        <ng-outlet></ng-outlet>
+    </div>
+
+    <accordion>
+        <accordion-panel heading="Panel 1">
+            This is the body for panel 1
+        </accordion-panel>
+    </accordion>
+
+</div>
+

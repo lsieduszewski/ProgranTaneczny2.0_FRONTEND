@@ -1,0 +1,29 @@
+<div>
+    <table class="table">
+        <tr>
+            <th>Tournament ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+
+        </tr>
+        <tr ng-repeat="judge in model.judges">
+            <td>{{judge.tournamentId}}</td>
+            <td>{{judge.judgeName}}</td>
+            <td>{{judge.judgeCity}}</td>
+            <td>{{judge.judgeCountry}}</td>
+        </tr>
+    </table>
+
+
+    <div>
+        <ng-outlet></ng-outlet>
+    </div>
+
+    <accordion>
+        <accordion-panel heading="Panel 1">
+            This is the body for panel 1
+        </accordion-panel>
+    </accordion>
+
+</div>

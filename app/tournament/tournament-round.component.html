@@ -1,0 +1,54 @@
+<div>
+
+    <div>
+        Aktualna runda startowa:
+        <b>
+            <div ng-if="model.couples.length <= 7">Final</div>
+            <div ng-if="model.couples.length <= 13 && model.couples.length > 7" > 1/2 Final</div>
+            <div ng-if="model.couples.length < 25 && model.couples.length > 13 ">1/4 Final</div>
+        </b>
+
+    </div>
+
+    <input type="text" id="judge" list="judges" placeholder="Podaj sędziego" ng-model="model.newRate.judgeId" style="width: 500px;" >
+
+    <datalist id="judges">
+        <option ng-repeat="judge in model.judges" >
+            Imię i nazwisko: {{judge.surname}} {{judge.name}},{{judge.city}},{{judge.country}}, Id:{{judge.id}}</option>
+    </datalist>
+
+
+
+    <label>Podaj nazwę tańca: </label>
+    <input type="text" ng-model="model.newRate.dance" /></br>
+
+
+    <div>
+        Podaj noty:
+        <b>
+            <div ng-if="model.couples.length <= 7">Oceny od 1 do {{model.couples.length}}. Liczba ocen {{model.couples.length}}.</div>
+            <div ng-if="model.couples.length <= 13 && model.couples.length > 7" > Liczba skreśleń {{model.couples.length/2 | number:0}} Liczba ocen {{model.couples.length}}</div>
+        </b></br>
+        <input type="text" ng-model="model.newRate.judgesRating" /></br>
+        <div>
+            <div ng-if="model.newRate.judgesRating.length == model.couples.length"> Jest ok</div>
+            <div ng-if="model.newRate.judgesRating.length < model.couples.length"> Podano za małą liczbe not</div>
+            <div ng-if="model.newRate.judgesRating.length > model.couples.length"> Podano za dużą liczbe not</div>
+
+        </div>
+    </div>
+
+    <button class="btn btn-default" ng-click="model.addJudgeRate()">Dodaj notę</button>
+
+
+    <div>
+        <ng-outlet></ng-outlet>
+    </div>
+
+    <accordion>
+        <accordion-panel heading="Panel 1">
+            This is the body for panel 1
+        </accordion-panel>
+    </accordion>
+
+</div>

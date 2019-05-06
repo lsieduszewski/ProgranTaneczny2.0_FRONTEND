@@ -1,0 +1,40 @@
+
+    <div>
+        Aktualna runda startowa:
+        <b>
+            <div ng-if="model.couples.length <= 7">Final</div>
+            <div ng-if="model.couples.length <= 13 && model.couples.length > 7" > 1/2 Final</div>
+            <div ng-if="model.couples.length < 25 && model.couples.length > 13 ">1/4 Final</div>
+        </b>
+    </div>
+
+
+
+    <table class="table">
+        <tr>
+            <th>Tournament ID</th>
+            <th>Male Dancer</th>
+            <th>Female Dancer</th>
+            <th>Club</th>
+
+        </tr>
+        <tr ng-repeat="couple in model.couples | orderBy:'startNumber'">
+            <td>{{couple.startNumber}}</td>
+            <td>{{couple.maleName}}</td>
+            <td>{{couple.femaleName}}</td>
+            <td>{{couple.club}}</td>
+        </tr>
+    </table>
+
+
+    <div>
+        <ng-outlet></ng-outlet>
+    </div>
+
+    <accordion>
+        <accordion-panel heading="Panel 1">
+            This is the body for panel 1
+        </accordion-panel>
+    </accordion>
+
+</div>
